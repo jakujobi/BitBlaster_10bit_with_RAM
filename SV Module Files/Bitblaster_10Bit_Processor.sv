@@ -78,6 +78,9 @@ logic Gin_Gin;                                  //Enable signal to save data to 
 logic Gout_Gout;                                //Enable signal to save data from the intermediate ALU output “G”
 logic [3:0] ALUcont_FN;                         //Signal to control which arithmetic or logic operation the ALU should perform
 
+logiv EN_RAM_to_BUS;                            //Enable signal to read data from RAM
+logic EN_BUS_to_RAM;                            //Enable signal to write data to RAM
+
 //! Controller
 controller controllerModule(
     .INST(Instruction_From_IR),
@@ -100,7 +103,11 @@ controller controllerModule(
     //To other Components
     .Ext(Extrn_Enable_Signal),
     .IRin(IR_Enable),
-    .Clr(Clear_Signal)
+    .Clr(Clear_Signal),
+
+    //RAM signals
+    .RAM_read_from_RAM(EN_RAM_to_BUS),  // Enable signal to read data from RAM
+    .RAM_write_to_RAM(EN_BUS_to_RAM); // Enable signal to write data to RAM
 );
 
 //! Register File
@@ -120,6 +127,10 @@ registerFile registerFileModule (
     .Q1(Q1_REG_Read_From_Register_File)         // Output data for Q1
 );
 
+//! RAM
+ram_1024x10 ramModule
+.clk (Debounced_Clock), // Clock signal (negative edge triggered)
+.reset 
 
 //! Multi-stage ALU
 ALU multistageALU (
