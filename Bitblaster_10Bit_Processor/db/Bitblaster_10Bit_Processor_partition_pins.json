@@ -1,0 +1,209 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "LED_B_Data_Bus[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_B_Data_Bus[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_B_Data_Bus[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_B_Data_Bus[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_B_Data_Bus[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_B_Data_Bus[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_B_Data_Bus[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_B_Data_Bus[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_B_Data_Bus[8]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_B_Data_Bus[9]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DHEX2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "THEX_Current_Timestep[0]",
+					"strict" : false
+				},
+				{
+					"name" : "THEX_Current_Timestep[2]",
+					"strict" : false
+				},
+				{
+					"name" : "THEX_Current_Timestep[3]",
+					"strict" : false
+				},
+				{
+					"name" : "THEX_Current_Timestep[4]",
+					"strict" : false
+				},
+				{
+					"name" : "THEX_Current_Timestep[5]",
+					"strict" : false
+				},
+				{
+					"name" : "THEX_Current_Timestep[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LED_D_Done",
+					"strict" : false
+				},
+				{
+					"name" : "Raw_Data_From_Switches[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Raw_Data_From_Switches[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Raw_Data_From_Switches[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Raw_Data_From_Switches[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Raw_Data_From_Switches[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Raw_Data_From_Switches[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Raw_Data_From_Switches[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Raw_Data_From_Switches[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Raw_Data_From_Switches[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Raw_Data_From_Switches[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Peek_Button",
+					"strict" : false
+				},
+				{
+					"name" : "Clock_50MHz",
+					"strict" : false
+				},
+				{
+					"name" : "Clock_Button",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

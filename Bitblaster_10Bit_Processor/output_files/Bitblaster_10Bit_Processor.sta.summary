@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'inputlogic:inputLogicModule|debouncer:clk_debouncer|A'
+Slack : -8.344
+TNS   : -414.548
+
+Type  : Slow 1200mV 85C Model Setup 'Clock_50MHz'
+Slack : -4.036
+TNS   : -106.955
+
+Type  : Slow 1200mV 85C Model Hold 'Clock_50MHz'
+Slack : 0.348
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'inputlogic:inputLogicModule|debouncer:clk_debouncer|A'
+Slack : 1.142
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Clock_50MHz'
+Slack : -3.000
+TNS   : -50.702
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inputlogic:inputLogicModule|debouncer:clk_debouncer|A'
+Slack : -1.403
+TNS   : -101.016
+
+Type  : Slow 1200mV 0C Model Setup 'inputlogic:inputLogicModule|debouncer:clk_debouncer|A'
+Slack : -7.642
+TNS   : -378.887
+
+Type  : Slow 1200mV 0C Model Setup 'Clock_50MHz'
+Slack : -3.694
+TNS   : -96.868
+
+Type  : Slow 1200mV 0C Model Hold 'Clock_50MHz'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'inputlogic:inputLogicModule|debouncer:clk_debouncer|A'
+Slack : 1.081
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Clock_50MHz'
+Slack : -3.000
+TNS   : -50.702
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inputlogic:inputLogicModule|debouncer:clk_debouncer|A'
+Slack : -1.403
+TNS   : -101.016
+
+Type  : Fast 1200mV 0C Model Setup 'inputlogic:inputLogicModule|debouncer:clk_debouncer|A'
+Slack : -2.916
+TNS   : -134.303
+
+Type  : Fast 1200mV 0C Model Setup 'Clock_50MHz'
+Slack : -1.227
+TNS   : -26.561
+
+Type  : Fast 1200mV 0C Model Hold 'Clock_50MHz'
+Slack : 0.153
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'inputlogic:inputLogicModule|debouncer:clk_debouncer|A'
+Slack : 0.456
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Clock_50MHz'
+Slack : -3.000
+TNS   : -38.148
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inputlogic:inputLogicModule|debouncer:clk_debouncer|A'
+Slack : -1.000
+TNS   : -72.000
+
+------------------------------------------------------------

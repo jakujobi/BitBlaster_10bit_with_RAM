@@ -1,0 +1,18 @@
+Fitter Status : Successful - Wed Nov 29 16:49:12 2023
+Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+Revision Name : Bitblaster_10Bit_Processor
+Top-level Entity Name : Bitblaster_10Bit_Processor
+Family : MAX 10
+Device : 10M50DAF484C7G
+Timing Models : Final
+Total logic elements : 404 / 49,760 ( < 1 % )
+    Total combinational functions : 398 / 49,760 ( < 1 % )
+    Dedicated logic registers : 106 / 49,760 ( < 1 % )
+Total registers : 106
+Total pins : 52 / 360 ( 14 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,677,312 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0 / 2 ( 0 % )
