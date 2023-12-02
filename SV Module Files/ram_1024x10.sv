@@ -1,6 +1,5 @@
 module ram_1024x10 (
     input logic clk,
-    input logic reset,
     input logic write_enable,
     input logic[9:0] address, // 10-bit address for 1024 locations
     input logic[9:0] data_in,  // 10-bit data input
@@ -10,20 +9,12 @@ module ram_1024x10 (
     // 1024x10 bit memory array
     logic[9:0] memory_array[1023:0];
 
-    // Asynchronous reset to clear memory
-    always_ff @(posedge clk or posedge reset) begin
-        if (reset) begin
-            // Clear the entire memory array
-            for (int i = 0; i < 1024; i++) begin
-                memory_array[i] <= 10'b0;
-            end
-        end
-        else begin
+    // Load into the RAM memory
+    always_ff @(negedge clk) begin
             if (write_enable) begin
                 // Write operation
                 memory_array[address] <= data_in;
             end
-        end
     end
 
     // Read operation
