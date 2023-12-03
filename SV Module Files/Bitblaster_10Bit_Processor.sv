@@ -132,15 +132,16 @@ registerFile registerFileModule (
 
 //! RAM
 ram_1024x10 ramModule (
-.clk (Debounced_Clock), // Clock signal (negative edge triggered)
-.EN_write_to_RAM (EN_BUS_to_RAM), // Write enable
-.EN_read_from_RAM (EN_RAM_to_BUS), // Read enable
+    .clk (Debounced_Clock), // Clock signal (negative edge triggered)
+    .EN_write_to_RAM (EN_BUS_to_RAM), // Write enable
+    .EN_read_from_RAM (EN_RAM_to_BUS), // Read enable
 
-.data_in (Shared_Data_Bus), // Input data
-.data_out (Shared_Data_Bus), // Output data
+    .data_in (Shared_Data_Bus), // Input data
 
-.address (Shared_Data_Bus), // Address
-.EN_AddressRegRead (EN_Address_Register_Read_from_BUS)  // Enable signal for the address register to read from the BUS
+    .address (Shared_Data_Bus), // Address
+    .EN_AddressRegRead (EN_Address_Register_Read_from_BUS),  // Enable signal for the address register to read from the BUS
+
+    .data_out (Shared_Data_Bus) // Output data
 ); 
 
 //! Multi-stage ALU

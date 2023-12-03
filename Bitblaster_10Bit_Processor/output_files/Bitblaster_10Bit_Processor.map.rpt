@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Bitblaster_10Bit_Processor
-Sat Dec  2 19:58:57 2023
+Sat Dec  2 23:27:38 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -50,7 +50,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Dec  2 19:58:57 2023          ;
+; Analysis & Synthesis Status        ; Successful - Sat Dec  2 23:27:38 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; Bitblaster_10Bit_Processor                     ;
 ; Top-level Entity Name              ; Bitblaster_10Bit_Processor                     ;
@@ -387,7 +387,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Sat Dec  2 19:58:47 2023
+    Info: Processing started: Sat Dec  2 23:27:28 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Bitblaster_10Bit_Processor -c Bitblaster_10Bit_Processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
@@ -419,10 +419,10 @@ Info (12128): Elaborating entity "upcount2" for hierarchy "upcount2:countermodul
 Info (12128): Elaborating entity "reg10" for hierarchy "reg10:instructionRegister" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 67
 Info (12128): Elaborating entity "controller" for hierarchy "controller:controllerModule" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 114
 Info (12128): Elaborating entity "registerFile" for hierarchy "registerFile:registerFileModule" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 131
-Info (12128): Elaborating entity "ram_1024x10" for hierarchy "ram_1024x10:ramModule" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 144
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:multistageALU" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 157
+Info (12128): Elaborating entity "ram_1024x10" for hierarchy "ram_1024x10:ramModule" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 145
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:multistageALU" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 158
 Warning (10230): Verilog HDL assignment warning at ALU.sv(56): truncated value with size 32 to match size of target (10) File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ALU.sv Line: 56
-Info (12128): Elaborating entity "outputlogic" for hierarchy "outputlogic:outputLogicModule" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 174
+Info (12128): Elaborating entity "outputlogic" for hierarchy "outputlogic:outputLogicModule" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 175
 Warning (10230): Verilog HDL assignment warning at outputlogic.sv(67): truncated value with size 32 to match size of target (4) File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/outputlogic.sv Line: 67
 Warning (10230): Verilog HDL assignment warning at outputlogic.sv(68): truncated value with size 32 to match size of target (4) File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/outputlogic.sv Line: 68
 Warning (10230): Verilog HDL assignment warning at outputlogic.sv(69): truncated value with size 32 to match size of target (4) File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/outputlogic.sv Line: 69
@@ -437,10 +437,10 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[7]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 24
     Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[8]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 24
     Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[9]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 24
-    Warning (13049): Converted tri-state buffer "controller:controllerModule|ALUcont[3]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv Line: 23
     Warning (13049): Converted tri-state buffer "controller:controllerModule|ALUcont[2]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv Line: 23
     Warning (13049): Converted tri-state buffer "controller:controllerModule|ALUcont[1]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv Line: 23
     Warning (13049): Converted tri-state buffer "controller:controllerModule|ALUcont[0]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv Line: 23
+    Warning (13049): Converted tri-state buffer "controller:controllerModule|ALUcont[3]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv Line: 23
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "registerFile:registerFileModule|registers" is uninferred due to inappropriate RAM size File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 26
 Warning (13027): Removed fan-outs from the following always-disabled I/O buffers
@@ -477,10 +477,10 @@ Info (21057): Implemented 510 device resources after synthesis - the final resou
     Info (21059): Implemented 39 output pins
     Info (21061): Implemented 458 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
-    Info: Peak virtual memory: 4827 megabytes
-    Info: Processing ended: Sat Dec  2 19:58:57 2023
+    Info: Peak virtual memory: 4819 megabytes
+    Info: Processing ended: Sat Dec  2 23:27:38 2023
     Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:05
 
 
 +------------------------------------------+
