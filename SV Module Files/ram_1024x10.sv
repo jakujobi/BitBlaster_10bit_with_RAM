@@ -12,7 +12,7 @@ module ram_1024x10 (
 
 logic [9:0] Stored_Address;
 
-//Address Register
+//Address Register to store the address from the BUS when the EN_AddressRegRead signal is high
 always_ff @(negedge clk) begin
     if (EN_AddressRegRead) begin
         Stored_Address <= address;
