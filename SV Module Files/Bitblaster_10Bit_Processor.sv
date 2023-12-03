@@ -81,6 +81,8 @@ logic [3:0] ALUcont_FN;                         //Signal to control which arithm
 logiv EN_RAM_to_BUS;                            //Enable signal to read data from RAM
 logic EN_BUS_to_RAM;                            //Enable signal to write data to RAM
 
+logic EN_Address_Register_Read_from_BUS;        //Enable signal for the address register to read from the BUS
+
 //! Controller
 controller controllerModule(
     .INST(Instruction_From_IR),
@@ -108,6 +110,7 @@ controller controllerModule(
     //RAM signals
     .RAM_read_from_RAM(EN_RAM_to_BUS),  // Enable signal to read data from RAM
     .RAM_write_to_RAM(EN_BUS_to_RAM); // Enable signal to write data to RAM
+    .EN_AddressRegRead (EN_Address_Register_Read_from_BUS)  // Enable signal for the address register to read from the BUS
 );
 
 //! Register File
@@ -128,9 +131,17 @@ registerFile registerFileModule (
 );
 
 //! RAM
-ram_1024x10 ramModule
+ram_1024x10 ramModule (
 .clk (Debounced_Clock), // Clock signal (negative edge triggered)
-.reset 
+.EN_write_to_RAM (EN_BUS_to_RAM), // Write enable
+.EN_read_from_RAM (EN_RAM_to_BUS), // Read enable
+
+.din (Shared_Data_Bus), // Input data
+.dout (Shared_Data_Bus) // Output data
+
+.address (Address_from_Register), // Address
+.EN_AddressRegRead (EN_Address_Register_Read_from_BUS)  // Enable signal for the address register to read from the BUS
+); 
 
 //! Multi-stage ALU
 ALU multistageALU (
