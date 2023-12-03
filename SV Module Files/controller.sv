@@ -47,8 +47,8 @@ parameter
     ADDI = 4'b1100,             //addi Rx, 6’bIIIIII; Add the value in Rx and the 6’bIIIIII and store the result inRx:  Rx←[Rx] + [6’bIIIIII]
     SUBI = 4'b1101;             //subi Rx, 6’bIIIIII; Subtract the value in Rx and the 6’bIIIIII and store the result inRx:  Rx←[Rx] − [6’bIIIIII]
 
-// logic [1:0] Rx; //Rx register
-// logic [1:0] Ry; //Ry register
+// logic [1:0] Rx = INST[7:6]; //Rx register
+// logic [1:0] Ry = INST[5:4]; //Ry register
 
 always_comb begin
     // Initialize all outputs to default values
@@ -135,18 +135,18 @@ always_comb begin
         //!New additions______________________________
         //LDR operation: Load the data stored in RAM at the 10-bit address stored in Ry to Rx
         if (INST[9:8] == 2'b00 && INST[3:0] == 1100) begin //4'1100 equals to LDR
-            Ext = 1;            //Allow external data input
-            Rin = INST[7:6];    //Load the data into the Rx register
-            ENW = 1;            //Let the register file read
-            Clr = 1;            //Done with the operation, reset the counter
+            Ext = 0;            //Don't allow external data input
+            Rout = INST[5:4];    //Prep the Ry register to write
+            ENR = 1;            //Let the register file write to bus
+            EN_AddressRegRead = 1 //Let AddressReg read
         end
 
         //STR operation: 
         if (INST[9:8] == 2'b00 && INST[3:0] == 1101) begin //4'1101 equals to STR
-            Ext = 1;            //Allow external data input
-            Rin = INST[7:6];    //Load the data into the Rx register
-            ENW = 1;            //Let the register file read
-            Clr = 1;            //Done with the operation, reset the counter
+            Ext = 0;            //Don't allow external data input
+            Rout = INST[5:4];    //Prep the Ry register to write
+            ENR = 1;            //Let the register file write to bus
+            EN_AddressRegRead = 1 //Let AddressReg read
         end
 
         //Other ALU operations
