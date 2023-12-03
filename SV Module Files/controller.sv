@@ -100,6 +100,7 @@ always_comb begin
         Rin = 2'b0;             // Default value for Rin
         Rout = 2'b0;            // Default value for Rout
         ENR = 1'b0;             // Default value for ENR
+        ENW = 1'b0;             // Default value for ENW
         Ain = 1'b0;             // Default value for Ain
         Gin = 1'b0;             // Default value for Gin
         Gout = 1'b0;            // Default value for Gout
@@ -144,7 +145,7 @@ always_comb begin
         //STR operation: 
         else if (INST[9:8] == 2'b00 && INST[3:0] == 1101) begin //4'1101 equals to STR
             Ext = 0;            //Don't allow external data input
-            Rout = INST[5:4];    //Prep the Ry register to write
+            Rout = INST[7:6];    //Prep the Rx register to write
             ENR = 1;            //Let the register file write to bus
             EN_AddressRegRead = 1; //Let AddressReg read
         end
@@ -215,7 +216,7 @@ always_comb begin
             EN_AddressRegRead = 0; //Stop SD register from reading
             RAM_write_to_RAM = 1;  //Let RAM read from bus
 
-            Rout = INST[7:6];    //Prep the Ry register to write
+            Rout = INST[5:4];    //Prep the Ry register to write
             ENR = 1;            //Let the register file write to bus
 
         end else begin
@@ -229,6 +230,7 @@ always_comb begin
         Rin = 2'b0;             // Default value for Rin
         Rout = 2'b0;            // Default value for Rout
         ENR = 1'b0;             // Default value for ENR
+        ENW = 1'b0;             // Default value for ENW
         Ain = 1'b0;             // Default value for Ain
         Gin = 1'b0;             // Default value for Gin
         ALUcont = 4'bzzzz;      // Default value for ALUcont
