@@ -1,15 +1,15 @@
-Analysis & Synthesis Status : Successful - Sat Dec  2 23:27:38 2023
+Analysis & Synthesis Status : Successful - Sun Dec  3 00:54:03 2023
 Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 Revision Name : Bitblaster_10Bit_Processor
 Top-level Entity Name : Bitblaster_10Bit_Processor
 Family : MAX 10
-Total logic elements : 448
-    Total combinational functions : 398
-    Dedicated logic registers : 106
-Total registers : 106
+Total logic elements : 509
+    Total combinational functions : 419
+    Dedicated logic registers : 147
+Total registers : 147
 Total pins : 52
 Total virtual pins : 0
-Total memory bits : 0
+Total memory bits : 10,240
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0
 UFM blocks : 0

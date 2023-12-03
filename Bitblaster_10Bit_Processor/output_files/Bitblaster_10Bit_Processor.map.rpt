@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Bitblaster_10Bit_Processor
-Sat Dec  2 23:27:38 2023
+Sun Dec  3 00:54:03 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -13,17 +13,21 @@ Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
+  8. Analysis & Synthesis RAM Summary
   9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: inputlogic:inputLogicModule|debouncer:peek_debouncer
- 12. Parameter Settings for User Entity Instance: inputlogic:inputLogicModule|debouncer:clk_debouncer
- 13. Parameter Settings for User Entity Instance: controller:controllerModule
- 14. Parameter Settings for User Entity Instance: ALU:multistageALU
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
- 18. Analysis & Synthesis Suppressed Messages
+ 10. Registers Added for RAM Pass-Through Logic
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Source assignments for ram_1024x10:ramModule|altsyncram:memory_array_rtl_0|altsyncram_7fd1:auto_generated
+ 13. Parameter Settings for User Entity Instance: inputlogic:inputLogicModule|debouncer:peek_debouncer
+ 14. Parameter Settings for User Entity Instance: inputlogic:inputLogicModule|debouncer:clk_debouncer
+ 15. Parameter Settings for User Entity Instance: controller:controllerModule
+ 16. Parameter Settings for User Entity Instance: ALU:multistageALU
+ 17. Parameter Settings for Inferred Entity Instance: ram_1024x10:ramModule|altsyncram:memory_array_rtl_0
+ 18. altsyncram Parameter Settings by Entity Instance
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+ 22. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -50,18 +54,18 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Dec  2 23:27:38 2023          ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec  3 00:54:03 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; Bitblaster_10Bit_Processor                     ;
 ; Top-level Entity Name              ; Bitblaster_10Bit_Processor                     ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 448                                            ;
-;     Total combinational functions  ; 398                                            ;
-;     Dedicated logic registers      ; 106                                            ;
-; Total registers                    ; 106                                            ;
+; Total logic elements               ; 509                                            ;
+;     Total combinational functions  ; 419                                            ;
+;     Dedicated logic registers      ; 147                                            ;
+; Total registers                    ; 147                                            ;
 ; Total pins                         ; 52                                             ;
 ; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 0                                              ;
+; Total memory bits                  ; 10,240                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
 ; Total PLLs                         ; 0                                              ;
 ; UFM blocks                         ; 0                                              ;
@@ -168,27 +172,36 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-10        ;   0.0%      ;
+;     Processors 2-10        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                         ;
-+--------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                 ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                                     ; Library ;
-+--------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; ../SV Module Files/upcount2.sv                   ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/upcount2.sv                   ;         ;
-; ../SV Module Files/registerFile.sv               ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv               ;         ;
-; ../SV Module Files/reg10.sv                      ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/reg10.sv                      ;         ;
-; ../SV Module Files/ram_1024x10.sv                ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv                ;         ;
-; ../SV Module Files/outputlogic.sv                ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/outputlogic.sv                ;         ;
-; ../SV Module Files/inputlogic.sv                 ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/inputlogic.sv                 ;         ;
-; ../SV Module Files/debouncer.sv                  ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/debouncer.sv                  ;         ;
-; ../SV Module Files/controller.sv                 ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv                 ;         ;
-; ../SV Module Files/Bitblaster_10Bit_Processor.sv ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv ;         ;
-; ../SV Module Files/ALU.sv                        ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ALU.sv                        ;         ;
-+--------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                             ;
++--------------------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                 ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                                         ; Library ;
++--------------------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; ../SV Module Files/upcount2.sv                   ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/upcount2.sv                       ;         ;
+; ../SV Module Files/registerFile.sv               ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv                   ;         ;
+; ../SV Module Files/reg10.sv                      ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/reg10.sv                          ;         ;
+; ../SV Module Files/ram_1024x10.sv                ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv                    ;         ;
+; ../SV Module Files/outputlogic.sv                ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/outputlogic.sv                    ;         ;
+; ../SV Module Files/inputlogic.sv                 ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/inputlogic.sv                     ;         ;
+; ../SV Module Files/debouncer.sv                  ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/debouncer.sv                      ;         ;
+; ../SV Module Files/controller.sv                 ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv                     ;         ;
+; ../SV Module Files/Bitblaster_10Bit_Processor.sv ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv     ;         ;
+; ../SV Module Files/ALU.sv                        ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ALU.sv                            ;         ;
+; altsyncram.tdf                                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsyncram.tdf                                                                                             ;         ;
+; stratix_ram_block.inc                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                                      ;         ;
+; lpm_mux.inc                                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_mux.inc                                                                                                ;         ;
+; lpm_decode.inc                                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_decode.inc                                                                                             ;         ;
+; aglobal221.inc                                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc                                                                                             ;         ;
+; a_rdenreg.inc                                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/a_rdenreg.inc                                                                                              ;         ;
+; altrom.inc                                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altrom.inc                                                                                                 ;         ;
+; altram.inc                                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altram.inc                                                                                                 ;         ;
+; altdpram.inc                                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altdpram.inc                                                                                               ;         ;
+; db/altsyncram_7fd1.tdf                           ; yes             ; Auto-Generated Megafunction  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/Bitblaster_10Bit_Processor/db/altsyncram_7fd1.tdf ;         ;
++--------------------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------------------------------------------------+
@@ -196,60 +209,63 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------------------------------------------------+
 ; Resource                                    ; Usage                                                 ;
 +---------------------------------------------+-------------------------------------------------------+
-; Estimated Total logic elements              ; 448                                                   ;
+; Estimated Total logic elements              ; 509                                                   ;
 ;                                             ;                                                       ;
-; Total combinational functions               ; 398                                                   ;
+; Total combinational functions               ; 419                                                   ;
 ; Logic element usage by number of LUT inputs ;                                                       ;
-;     -- 4 input functions                    ; 302                                                   ;
-;     -- 3 input functions                    ; 49                                                    ;
-;     -- <=2 input functions                  ; 47                                                    ;
+;     -- 4 input functions                    ; 291                                                   ;
+;     -- 3 input functions                    ; 76                                                    ;
+;     -- <=2 input functions                  ; 52                                                    ;
 ;                                             ;                                                       ;
 ; Logic elements by mode                      ;                                                       ;
-;     -- normal mode                          ; 358                                                   ;
+;     -- normal mode                          ; 379                                                   ;
 ;     -- arithmetic mode                      ; 40                                                    ;
 ;                                             ;                                                       ;
-; Total registers                             ; 106                                                   ;
-;     -- Dedicated logic registers            ; 106                                                   ;
+; Total registers                             ; 147                                                   ;
+;     -- Dedicated logic registers            ; 147                                                   ;
 ;     -- I/O registers                        ; 0                                                     ;
 ;                                             ;                                                       ;
 ; I/O pins                                    ; 52                                                    ;
+; Total memory bits                           ; 10240                                                 ;
 ;                                             ;                                                       ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                     ;
 ;                                             ;                                                       ;
 ; Maximum fan-out node                        ; inputlogic:inputLogicModule|debouncer:clk_debouncer|A ;
-; Maximum fan-out                             ; 74                                                    ;
-; Total fan-out                               ; 1859                                                  ;
-; Average fan-out                             ; 3.06                                                  ;
+; Maximum fan-out                             ; 125                                                   ;
+; Total fan-out                               ; 2239                                                  ;
+; Average fan-out                             ; 3.29                                                  ;
 +---------------------------------------------+-------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                      ;
-+--------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------+----------------------------+--------------+
-; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                              ; Entity Name                ; Library Name ;
-+--------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------+----------------------------+--------------+
-; |Bitblaster_10Bit_Processor          ; 398 (0)             ; 106 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 52   ; 0            ; 0          ; |Bitblaster_10Bit_Processor                                                      ; Bitblaster_10Bit_Processor ; work         ;
-;    |ALU:multistageALU|               ; 215 (215)           ; 20 (20)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|ALU:multistageALU                                    ; ALU                        ; work         ;
-;    |controller:controllerModule|     ; 35 (35)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|controller:controllerModule                          ; controller                 ; work         ;
-;    |inputlogic:inputLogicModule|     ; 69 (25)             ; 34 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|inputlogic:inputLogicModule                          ; inputlogic                 ; work         ;
-;       |debouncer:clk_debouncer|      ; 22 (22)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|inputlogic:inputLogicModule|debouncer:clk_debouncer  ; debouncer                  ; work         ;
-;       |debouncer:peek_debouncer|     ; 22 (22)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|inputlogic:inputLogicModule|debouncer:peek_debouncer ; debouncer                  ; work         ;
-;    |outputlogic:outputLogicModule|   ; 30 (30)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|outputlogic:outputLogicModule                        ; outputlogic                ; work         ;
-;    |reg10:instructionRegister|       ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|reg10:instructionRegister                            ; reg10                      ; work         ;
-;    |registerFile:registerFileModule| ; 47 (47)             ; 40 (40)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|registerFile:registerFileModule                      ; registerFile               ; work         ;
-;    |upcount2:countermodule|          ; 2 (2)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|upcount2:countermodule                               ; upcount2                   ; work         ;
-+--------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------+----------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                         ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                            ; Entity Name                ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
+; |Bitblaster_10Bit_Processor               ; 419 (0)             ; 147 (0)                   ; 10240       ; 0          ; 0            ; 0       ; 0         ; 52   ; 0            ; 0          ; |Bitblaster_10Bit_Processor                                                                                    ; Bitblaster_10Bit_Processor ; work         ;
+;    |ALU:multistageALU|                    ; 206 (206)           ; 20 (20)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|ALU:multistageALU                                                                  ; ALU                        ; work         ;
+;    |controller:controllerModule|          ; 49 (49)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|controller:controllerModule                                                        ; controller                 ; work         ;
+;    |inputlogic:inputLogicModule|          ; 71 (27)             ; 34 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|inputlogic:inputLogicModule                                                        ; inputlogic                 ; work         ;
+;       |debouncer:clk_debouncer|           ; 22 (22)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|inputlogic:inputLogicModule|debouncer:clk_debouncer                                ; debouncer                  ; work         ;
+;       |debouncer:peek_debouncer|          ; 22 (22)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|inputlogic:inputLogicModule|debouncer:peek_debouncer                               ; debouncer                  ; work         ;
+;    |outputlogic:outputLogicModule|        ; 30 (30)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|outputlogic:outputLogicModule                                                      ; outputlogic                ; work         ;
+;    |ram_1024x10:ramModule|                ; 17 (17)             ; 41 (41)                   ; 10240       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|ram_1024x10:ramModule                                                              ; ram_1024x10                ; work         ;
+;       |altsyncram:memory_array_rtl_0|     ; 0 (0)               ; 0 (0)                     ; 10240       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|ram_1024x10:ramModule|altsyncram:memory_array_rtl_0                                ; altsyncram                 ; work         ;
+;          |altsyncram_7fd1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 10240       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|ram_1024x10:ramModule|altsyncram:memory_array_rtl_0|altsyncram_7fd1:auto_generated ; altsyncram_7fd1            ; work         ;
+;    |reg10:instructionRegister|            ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|reg10:instructionRegister                                                          ; reg10                      ; work         ;
+;    |registerFile:registerFileModule|      ; 44 (44)             ; 40 (40)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|registerFile:registerFileModule                                                    ; registerFile               ; work         ;
+;    |upcount2:countermodule|               ; 2 (2)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|upcount2:countermodule                                                             ; upcount2                   ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                       ;
-+--------------------------------------------+---------------------------------------------+
-; Register name                              ; Reason for Removal                          ;
-+--------------------------------------------+---------------------------------------------+
-; ram_1024x10:ramModule|Stored_Address[0..9] ; Stuck at GND due to stuck port clock_enable ;
-; Total Number of Removed Registers = 10     ;                                             ;
-+--------------------------------------------+---------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                   ;
++-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+; Name                                                                                          ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF  ;
++-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+; ram_1024x10:ramModule|altsyncram:memory_array_rtl_0|altsyncram_7fd1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 10           ; 1024         ; 10           ; 10240 ; None ;
++-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
 
 
 +------------------------------------------------------+
@@ -257,14 +273,53 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 106   ;
+; Total registers                              ; 147   ;
 ; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 70    ;
+; Number of registers using Clock Enable       ; 90    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------+
+; Registers Added for RAM Pass-Through Logic                                                     ;
++-----------------------------------------------------+------------------------------------------+
+; Register Name                                       ; RAM Name                                 ;
++-----------------------------------------------------+------------------------------------------+
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[0]  ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[1]  ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[2]  ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[3]  ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[4]  ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[5]  ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[6]  ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[7]  ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[8]  ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[9]  ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[10] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[11] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[12] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[13] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[14] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[15] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[16] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[17] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[18] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[19] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[20] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[21] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[22] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[23] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[24] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[25] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[26] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[27] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[28] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[29] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
+; ram_1024x10:ramModule|memory_array_rtl_0_bypass[30] ; ram_1024x10:ramModule|memory_array_rtl_0 ;
++-----------------------------------------------------+------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -272,11 +327,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
-; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; No         ; |Bitblaster_10Bit_Processor|controller:controllerModule|Rin[0]  ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |Bitblaster_10Bit_Processor|controller:controllerModule|Rout[1] ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Bitblaster_10Bit_Processor|controller:controllerModule|Ain     ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; No         ; |Bitblaster_10Bit_Processor|controller:controllerModule|Rin[1]  ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |Bitblaster_10Bit_Processor|controller:controllerModule|Rout[1] ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |Bitblaster_10Bit_Processor|ALU:multistageALU|Add0              ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |Bitblaster_10Bit_Processor|ALU:multistageALU|Add0              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Source assignments for ram_1024x10:ramModule|altsyncram:memory_array_rtl_0|altsyncram_7fd1:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                          ;
++---------------------------------+--------------------+------+---------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                           ;
++---------------------------------+--------------------+------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -345,30 +410,112 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ram_1024x10:ramModule|altsyncram:memory_array_rtl_0 ;
++------------------------------------+----------------------+------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                     ;
++------------------------------------+----------------------+------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                  ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                           ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                  ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                  ;
+; WIDTH_A                            ; 10                   ; Untyped                                  ;
+; WIDTHAD_A                          ; 10                   ; Untyped                                  ;
+; NUMWORDS_A                         ; 1024                 ; Untyped                                  ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                  ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                  ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                  ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                  ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                  ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                  ;
+; WIDTH_B                            ; 10                   ; Untyped                                  ;
+; WIDTHAD_B                          ; 10                   ; Untyped                                  ;
+; NUMWORDS_B                         ; 1024                 ; Untyped                                  ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                  ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                  ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                  ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                  ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                  ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                  ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                  ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                  ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                  ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                  ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                  ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                  ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                  ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                  ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                  ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                  ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                  ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                  ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                  ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                  ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                  ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                  ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                  ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                  ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                  ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                  ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                  ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                  ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                  ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                  ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                  ;
+; DEVICE_FAMILY                      ; MAX 10               ; Untyped                                  ;
+; CBXI_PARAMETER                     ; altsyncram_7fd1      ; Untyped                                  ;
++------------------------------------+----------------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                ;
++-------------------------------------------+-----------------------------------------------------+
+; Name                                      ; Value                                               ;
++-------------------------------------------+-----------------------------------------------------+
+; Number of entity instances                ; 1                                                   ;
+; Entity Instance                           ; ram_1024x10:ramModule|altsyncram:memory_array_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                           ;
+;     -- WIDTH_A                            ; 10                                                  ;
+;     -- NUMWORDS_A                         ; 1024                                                ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                        ;
+;     -- WIDTH_B                            ; 10                                                  ;
+;     -- NUMWORDS_B                         ; 1024                                                ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                              ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                        ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                           ;
++-------------------------------------------+-----------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 52                          ;
-; cycloneiii_ff         ; 106                         ;
-;     ENA               ; 70                          ;
+; cycloneiii_ff         ; 147                         ;
+;     ENA               ; 90                          ;
 ;     SCLR              ; 32                          ;
-;     plain             ; 4                           ;
+;     plain             ; 25                          ;
 ; cycloneiii_io_obuf    ; 10                          ;
-; cycloneiii_lcell_comb ; 404                         ;
+; cycloneiii_lcell_comb ; 425                         ;
 ;     arith             ; 40                          ;
 ;         2 data inputs ; 30                          ;
 ;         3 data inputs ; 10                          ;
-;     normal            ; 364                         ;
+;     normal            ; 385                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 8                           ;
-;         2 data inputs ; 14                          ;
-;         3 data inputs ; 39                          ;
-;         4 data inputs ; 302                         ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 20                          ;
+;         3 data inputs ; 66                          ;
+;         4 data inputs ; 291                         ;
+; cycloneiii_ram_block  ; 10                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 15.00                       ;
-; Average LUT depth     ; 9.27                        ;
+; Max LUT depth         ; 14.00                       ;
+; Average LUT depth     ; 8.81                        ;
 +-----------------------+-----------------------------+
 
 
@@ -377,7 +524,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -387,7 +534,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Sat Dec  2 23:27:28 2023
+    Info: Processing started: Sun Dec  3 00:53:48 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Bitblaster_10Bit_Processor -c Bitblaster_10Bit_Processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
@@ -437,23 +584,47 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[7]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 24
     Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[8]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 24
     Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[9]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 24
-    Warning (13049): Converted tri-state buffer "controller:controllerModule|ALUcont[2]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv Line: 23
     Warning (13049): Converted tri-state buffer "controller:controllerModule|ALUcont[1]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv Line: 23
     Warning (13049): Converted tri-state buffer "controller:controllerModule|ALUcont[0]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv Line: 23
+    Warning (13049): Converted tri-state buffer "controller:controllerModule|ALUcont[2]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv Line: 23
     Warning (13049): Converted tri-state buffer "controller:controllerModule|ALUcont[3]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv Line: 23
+Warning (276020): Inferred RAM node "ram_1024x10:ramModule|memory_array_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "registerFile:registerFileModule|registers" is uninferred due to inappropriate RAM size File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 26
-Warning (13027): Removed fan-outs from the following always-disabled I/O buffers
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[0]" to the node "LED_B_Data_Bus[0]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[1]" to the node "LED_B_Data_Bus[1]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[2]" to the node "LED_B_Data_Bus[2]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[3]" to the node "LED_B_Data_Bus[3]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[4]" to the node "LED_B_Data_Bus[4]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[5]" to the node "LED_B_Data_Bus[5]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[6]" to the node "LED_B_Data_Bus[6]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[7]" to the node "LED_B_Data_Bus[7]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[8]" to the node "LED_B_Data_Bus[8]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[9]" to the node "LED_B_Data_Bus[9]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram_1024x10:ramModule|memory_array_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 10
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTH_B set to 10
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 1024
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+Info (12130): Elaborated megafunction instantiation "ram_1024x10:ramModule|altsyncram:memory_array_rtl_0"
+Info (12133): Instantiated megafunction "ram_1024x10:ramModule|altsyncram:memory_array_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "10"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "WIDTH_B" = "10"
+    Info (12134): Parameter "WIDTHAD_B" = "10"
+    Info (12134): Parameter "NUMWORDS_B" = "1024"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_7fd1.tdf
+    Info (12023): Found entity 1: altsyncram_7fd1 File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/Bitblaster_10Bit_Processor/db/altsyncram_7fd1.tdf Line: 28
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13047): Converted the fan-out from the tri-state buffer "inputlogic:inputLogicModule|databus[0]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/inputlogic.sv Line: 17
     Warning (13047): Converted the fan-out from the tri-state buffer "inputlogic:inputLogicModule|databus[1]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/inputlogic.sv Line: 17
@@ -472,15 +643,16 @@ Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/Bitblaster_10Bit_Processor/output_files/Bitblaster_10Bit_Processor.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 510 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 582 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 39 output pins
-    Info (21061): Implemented 458 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
-    Info: Peak virtual memory: 4819 megabytes
-    Info: Processing ended: Sat Dec  2 23:27:38 2023
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:05
+    Info (21061): Implemented 520 logic cells
+    Info (21064): Implemented 10 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
+    Info: Peak virtual memory: 4836 megabytes
+    Info: Processing ended: Sun Dec  3 00:54:03 2023
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:07
 
 
 +------------------------------------------+
