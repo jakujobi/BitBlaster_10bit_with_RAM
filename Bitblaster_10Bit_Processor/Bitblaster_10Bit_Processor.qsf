@@ -43,20 +43,6 @@ set_global_assignment -name TOP_LEVEL_ENTITY Bitblaster_10Bit_Processor
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:44:00  NOVEMBER 18, 2023"
 set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.1 Lite Edition"
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/Bitblaster_10Bit_Processor.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/binary4todecimal7decoder.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/ALU.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/upcount2.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/t_ff.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/registerFile.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/reg10.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/outputlogic.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/inputlogic.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/extrn.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/decimal7decoder.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/debouncer.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/D_FF_neg.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/controller.sv"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -126,4 +112,16 @@ set_location_assignment PIN_C20 -to THEX_Current_Timestep[4]
 set_location_assignment PIN_D19 -to THEX_Current_Timestep[5]
 set_location_assignment PIN_E17 -to THEX_Current_Timestep[6]
 set_location_assignment PIN_D22 -to LED_D_Done
+set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/upcount2.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/registerFile.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/reg10.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/ram_1024x10.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/outputlogic.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/inputlogic.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/debouncer.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/controller.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/Bitblaster_10Bit_Processor.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../SV Module Files/ALU.sv"
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

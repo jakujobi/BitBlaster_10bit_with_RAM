@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Bitblaster_10Bit_Processor
-Wed Nov 29 16:49:01 2023
+Sat Dec  2 19:58:57 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -13,16 +13,17 @@ Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: inputlogic:inputLogicModule|debouncer:peek_debouncer
- 11. Parameter Settings for User Entity Instance: inputlogic:inputLogicModule|debouncer:clk_debouncer
- 12. Parameter Settings for User Entity Instance: controller:controllerModule
- 13. Parameter Settings for User Entity Instance: ALU:multistageALU
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
- 17. Analysis & Synthesis Suppressed Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: inputlogic:inputLogicModule|debouncer:peek_debouncer
+ 12. Parameter Settings for User Entity Instance: inputlogic:inputLogicModule|debouncer:clk_debouncer
+ 13. Parameter Settings for User Entity Instance: controller:controllerModule
+ 14. Parameter Settings for User Entity Instance: ALU:multistageALU
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+ 18. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -49,13 +50,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov 29 16:49:01 2023          ;
+; Analysis & Synthesis Status        ; Successful - Sat Dec  2 19:58:57 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; Bitblaster_10Bit_Processor                     ;
 ; Top-level Entity Name              ; Bitblaster_10Bit_Processor                     ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 447                                            ;
-;     Total combinational functions  ; 397                                            ;
+; Total logic elements               ; 448                                            ;
+;     Total combinational functions  ; 398                                            ;
 ;     Dedicated logic registers      ; 106                                            ;
 ; Total registers                    ; 106                                            ;
 ; Total pins                         ; 52                                             ;
@@ -167,25 +168,27 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-10        ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-10        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                          ;
-+--------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                 ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                                      ; Library ;
-+--------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; ../SV Module Files/Bitblaster_10Bit_Processor.sv ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/Bitblaster_10Bit_Processor.sv ;         ;
-; ../SV Module Files/ALU.sv                        ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/ALU.sv                        ;         ;
-; ../SV Module Files/upcount2.sv                   ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/upcount2.sv                   ;         ;
-; ../SV Module Files/registerFile.sv               ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/registerFile.sv               ;         ;
-; ../SV Module Files/reg10.sv                      ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/reg10.sv                      ;         ;
-; ../SV Module Files/outputlogic.sv                ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/outputlogic.sv                ;         ;
-; ../SV Module Files/inputlogic.sv                 ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/inputlogic.sv                 ;         ;
-; ../SV Module Files/debouncer.sv                  ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/debouncer.sv                  ;         ;
-; ../SV Module Files/controller.sv                 ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/controller.sv                 ;         ;
-+--------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                         ;
++--------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                 ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                                     ; Library ;
++--------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; ../SV Module Files/upcount2.sv                   ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/upcount2.sv                   ;         ;
+; ../SV Module Files/registerFile.sv               ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv               ;         ;
+; ../SV Module Files/reg10.sv                      ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/reg10.sv                      ;         ;
+; ../SV Module Files/ram_1024x10.sv                ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv                ;         ;
+; ../SV Module Files/outputlogic.sv                ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/outputlogic.sv                ;         ;
+; ../SV Module Files/inputlogic.sv                 ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/inputlogic.sv                 ;         ;
+; ../SV Module Files/debouncer.sv                  ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/debouncer.sv                  ;         ;
+; ../SV Module Files/controller.sv                 ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv                 ;         ;
+; ../SV Module Files/Bitblaster_10Bit_Processor.sv ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv ;         ;
+; ../SV Module Files/ALU.sv                        ; yes             ; User SystemVerilog HDL File  ; D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ALU.sv                        ;         ;
++--------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------------------------------------------------+
@@ -193,16 +196,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------------------------------------------------+
 ; Resource                                    ; Usage                                                 ;
 +---------------------------------------------+-------------------------------------------------------+
-; Estimated Total logic elements              ; 447                                                   ;
+; Estimated Total logic elements              ; 448                                                   ;
 ;                                             ;                                                       ;
-; Total combinational functions               ; 397                                                   ;
+; Total combinational functions               ; 398                                                   ;
 ; Logic element usage by number of LUT inputs ;                                                       ;
-;     -- 4 input functions                    ; 301                                                   ;
-;     -- 3 input functions                    ; 50                                                    ;
-;     -- <=2 input functions                  ; 46                                                    ;
+;     -- 4 input functions                    ; 302                                                   ;
+;     -- 3 input functions                    ; 49                                                    ;
+;     -- <=2 input functions                  ; 47                                                    ;
 ;                                             ;                                                       ;
 ; Logic elements by mode                      ;                                                       ;
-;     -- normal mode                          ; 357                                                   ;
+;     -- normal mode                          ; 358                                                   ;
 ;     -- arithmetic mode                      ; 40                                                    ;
 ;                                             ;                                                       ;
 ; Total registers                             ; 106                                                   ;
@@ -215,7 +218,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                       ;
 ; Maximum fan-out node                        ; inputlogic:inputLogicModule|debouncer:clk_debouncer|A ;
 ; Maximum fan-out                             ; 74                                                    ;
-; Total fan-out                               ; 1856                                                  ;
+; Total fan-out                               ; 1859                                                  ;
 ; Average fan-out                             ; 3.06                                                  ;
 +---------------------------------------------+-------------------------------------------------------+
 
@@ -225,9 +228,9 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------+----------------------------+--------------+
 ; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                              ; Entity Name                ; Library Name ;
 +--------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------+----------------------------+--------------+
-; |Bitblaster_10Bit_Processor          ; 397 (0)             ; 106 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 52   ; 0            ; 0          ; |Bitblaster_10Bit_Processor                                                      ; Bitblaster_10Bit_Processor ; work         ;
+; |Bitblaster_10Bit_Processor          ; 398 (0)             ; 106 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 52   ; 0            ; 0          ; |Bitblaster_10Bit_Processor                                                      ; Bitblaster_10Bit_Processor ; work         ;
 ;    |ALU:multistageALU|               ; 215 (215)           ; 20 (20)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|ALU:multistageALU                                    ; ALU                        ; work         ;
-;    |controller:controllerModule|     ; 34 (34)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|controller:controllerModule                          ; controller                 ; work         ;
+;    |controller:controllerModule|     ; 35 (35)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|controller:controllerModule                          ; controller                 ; work         ;
 ;    |inputlogic:inputLogicModule|     ; 69 (25)             ; 34 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|inputlogic:inputLogicModule                          ; inputlogic                 ; work         ;
 ;       |debouncer:clk_debouncer|      ; 22 (22)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|inputlogic:inputLogicModule|debouncer:clk_debouncer  ; debouncer                  ; work         ;
 ;       |debouncer:peek_debouncer|     ; 22 (22)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|inputlogic:inputLogicModule|debouncer:peek_debouncer ; debouncer                  ; work         ;
@@ -237,6 +240,16 @@ https://fpgasoftware.intel.com/eula.
 ;    |upcount2:countermodule|          ; 2 (2)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|upcount2:countermodule                               ; upcount2                   ; work         ;
 +--------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------+----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                       ;
++--------------------------------------------+---------------------------------------------+
+; Register name                              ; Reason for Removal                          ;
++--------------------------------------------+---------------------------------------------+
+; ram_1024x10:ramModule|Stored_Address[0..9] ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 10     ;                                             ;
++--------------------------------------------+---------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -260,7 +273,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 ; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; No         ; |Bitblaster_10Bit_Processor|controller:controllerModule|Rin[0]  ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |Bitblaster_10Bit_Processor|controller:controllerModule|Rout[0] ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |Bitblaster_10Bit_Processor|controller:controllerModule|Rout[1] ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |Bitblaster_10Bit_Processor|ALU:multistageALU|Add0              ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |Bitblaster_10Bit_Processor|ALU:multistageALU|Add0              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
@@ -343,19 +356,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 32                          ;
 ;     plain             ; 4                           ;
 ; cycloneiii_io_obuf    ; 10                          ;
-; cycloneiii_lcell_comb ; 403                         ;
+; cycloneiii_lcell_comb ; 404                         ;
 ;     arith             ; 40                          ;
 ;         2 data inputs ; 30                          ;
 ;         3 data inputs ; 10                          ;
-;     normal            ; 363                         ;
+;     normal            ; 364                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 8                           ;
-;         2 data inputs ; 13                          ;
-;         3 data inputs ; 40                          ;
-;         4 data inputs ; 301                         ;
+;         2 data inputs ; 14                          ;
+;         3 data inputs ; 39                          ;
+;         4 data inputs ; 302                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 15.00                       ;
-; Average LUT depth     ; 9.26                        ;
+; Average LUT depth     ; 9.27                        ;
 +-----------------------+-----------------------------+
 
 
@@ -374,96 +387,105 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Wed Nov 29 16:48:48 2023
+    Info: Processing started: Sat Dec  2 19:58:47 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Bitblaster_10Bit_Processor -c Bitblaster_10Bit_Processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/bitblaster_10bit_processor/sv module files/bitblaster_10bit_processor.sv
-    Info (12023): Found entity 1: Bitblaster_10Bit_Processor File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 12
-Warning (12019): Can't analyze file -- file ../SV Module Files/binary4todecimal7decoder.sv is missing
-Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/bitblaster_10bit_processor/sv module files/alu.sv
-    Info (12023): Found entity 1: ALU File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/ALU.sv Line: 10
-Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/bitblaster_10bit_processor/sv module files/upcount2.sv
-    Info (12023): Found entity 1: upcount2 File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/upcount2.sv Line: 10
-Warning (12019): Can't analyze file -- file ../SV Module Files/t_ff.sv is missing
-Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/bitblaster_10bit_processor/sv module files/registerfile.sv
-    Info (12023): Found entity 1: registerFile File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/registerFile.sv Line: 10
-Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/bitblaster_10bit_processor/sv module files/reg10.sv
-    Info (12023): Found entity 1: reg10 File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/reg10.sv Line: 9
-Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/bitblaster_10bit_processor/sv module files/outputlogic.sv
-    Info (12023): Found entity 1: outputlogic File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/outputlogic.sv Line: 12
-Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/bitblaster_10bit_processor/sv module files/inputlogic.sv
-    Info (12023): Found entity 1: inputlogic File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/inputlogic.sv Line: 10
-Warning (12019): Can't analyze file -- file ../SV Module Files/extrn.sv is missing
-Warning (12019): Can't analyze file -- file ../SV Module Files/decimal7decoder.sv is missing
-Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/bitblaster_10bit_processor/sv module files/debouncer.sv
-    Info (12023): Found entity 1: debouncer File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/debouncer.sv Line: 15
-Warning (12019): Can't analyze file -- file ../SV Module Files/D_FF_neg.sv is missing
-Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/bitblaster_10bit_processor/sv module files/controller.sv
-    Info (12023): Found entity 1: controller File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/controller.sv Line: 10
-Warning (10236): Verilog HDL Implicit Net warning at Bitblaster_10Bit_Processor.sv(110): created implicit net for "ENR1_1bit" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 110
+Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/bitblaster_10bit_with_ram/sv module files/upcount2.sv
+    Info (12023): Found entity 1: upcount2 File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/upcount2.sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/bitblaster_10bit_with_ram/sv module files/registerfile.sv
+    Info (12023): Found entity 1: registerFile File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/bitblaster_10bit_with_ram/sv module files/reg10.sv
+    Info (12023): Found entity 1: reg10 File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/reg10.sv Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/bitblaster_10bit_with_ram/sv module files/ram_1024x10.sv
+    Info (12023): Found entity 1: ram_1024x10 File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/bitblaster_10bit_with_ram/sv module files/outputlogic.sv
+    Info (12023): Found entity 1: outputlogic File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/outputlogic.sv Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/bitblaster_10bit_with_ram/sv module files/inputlogic.sv
+    Info (12023): Found entity 1: inputlogic File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/inputlogic.sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/bitblaster_10bit_with_ram/sv module files/debouncer.sv
+    Info (12023): Found entity 1: debouncer File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/debouncer.sv Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/bitblaster_10bit_with_ram/sv module files/controller.sv
+    Info (12023): Found entity 1: controller File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/bitblaster_10bit_with_ram/sv module files/bitblaster_10bit_processor.sv
+    Info (12023): Found entity 1: Bitblaster_10Bit_Processor File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/bitblaster_10bit_with_ram/sv module files/alu.sv
+    Info (12023): Found entity 1: ALU File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ALU.sv Line: 10
+Warning (10236): Verilog HDL Implicit Net warning at Bitblaster_10Bit_Processor.sv(120): created implicit net for "ENR1_1bit" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 120
 Info (12127): Elaborating entity "Bitblaster_10Bit_Processor" for the top level hierarchy
-Info (12128): Elaborating entity "inputlogic" for hierarchy "inputlogic:inputLogicModule" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 52
-Info (12128): Elaborating entity "debouncer" for hierarchy "inputlogic:inputLogicModule|debouncer:peek_debouncer" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/inputlogic.sv Line: 28
-Info (12128): Elaborating entity "upcount2" for hierarchy "upcount2:countermodule" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 59
-Info (12128): Elaborating entity "reg10" for hierarchy "reg10:instructionRegister" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 67
-Info (12128): Elaborating entity "controller" for hierarchy "controller:controllerModule" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 104
-Info (12128): Elaborating entity "registerFile" for hierarchy "registerFile:registerFileModule" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 121
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:multistageALU" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 135
-Warning (10230): Verilog HDL assignment warning at ALU.sv(56): truncated value with size 32 to match size of target (10) File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/ALU.sv Line: 56
-Info (12128): Elaborating entity "outputlogic" for hierarchy "outputlogic:outputLogicModule" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 152
-Warning (10230): Verilog HDL assignment warning at outputlogic.sv(67): truncated value with size 32 to match size of target (4) File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/outputlogic.sv Line: 67
-Warning (10230): Verilog HDL assignment warning at outputlogic.sv(68): truncated value with size 32 to match size of target (4) File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/outputlogic.sv Line: 68
-Warning (10230): Verilog HDL assignment warning at outputlogic.sv(69): truncated value with size 32 to match size of target (4) File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/outputlogic.sv Line: 69
+Info (12128): Elaborating entity "inputlogic" for hierarchy "inputlogic:inputLogicModule" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 52
+Info (12128): Elaborating entity "debouncer" for hierarchy "inputlogic:inputLogicModule|debouncer:peek_debouncer" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/inputlogic.sv Line: 28
+Info (12128): Elaborating entity "upcount2" for hierarchy "upcount2:countermodule" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 59
+Info (12128): Elaborating entity "reg10" for hierarchy "reg10:instructionRegister" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 67
+Info (12128): Elaborating entity "controller" for hierarchy "controller:controllerModule" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 114
+Info (12128): Elaborating entity "registerFile" for hierarchy "registerFile:registerFileModule" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 131
+Info (12128): Elaborating entity "ram_1024x10" for hierarchy "ram_1024x10:ramModule" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 144
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:multistageALU" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 157
+Warning (10230): Verilog HDL assignment warning at ALU.sv(56): truncated value with size 32 to match size of target (10) File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ALU.sv Line: 56
+Info (12128): Elaborating entity "outputlogic" for hierarchy "outputlogic:outputLogicModule" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 174
+Warning (10230): Verilog HDL assignment warning at outputlogic.sv(67): truncated value with size 32 to match size of target (4) File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/outputlogic.sv Line: 67
+Warning (10230): Verilog HDL assignment warning at outputlogic.sv(68): truncated value with size 32 to match size of target (4) File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/outputlogic.sv Line: 68
+Warning (10230): Verilog HDL assignment warning at outputlogic.sv(69): truncated value with size 32 to match size of target (4) File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/outputlogic.sv Line: 69
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[0]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/registerFile.sv Line: 24
-    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[1]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/registerFile.sv Line: 24
-    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[2]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/registerFile.sv Line: 24
-    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[3]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/registerFile.sv Line: 24
-    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[4]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/registerFile.sv Line: 24
-    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[5]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/registerFile.sv Line: 24
-    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[6]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/registerFile.sv Line: 24
-    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[7]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/registerFile.sv Line: 24
-    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[8]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/registerFile.sv Line: 24
-    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[9]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/registerFile.sv Line: 24
-    Warning (13049): Converted tri-state buffer "controller:controllerModule|ALUcont[0]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/controller.sv Line: 23
-    Warning (13049): Converted tri-state buffer "controller:controllerModule|ALUcont[1]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/controller.sv Line: 23
-    Warning (13049): Converted tri-state buffer "controller:controllerModule|ALUcont[2]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/controller.sv Line: 23
-    Warning (13049): Converted tri-state buffer "controller:controllerModule|ALUcont[3]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/controller.sv Line: 23
+    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[0]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 24
+    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[1]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 24
+    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[2]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 24
+    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[3]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 24
+    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[4]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 24
+    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[5]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 24
+    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[6]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 24
+    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[7]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 24
+    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[8]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 24
+    Warning (13049): Converted tri-state buffer "registerFile:registerFileModule|Q1[9]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 24
+    Warning (13049): Converted tri-state buffer "controller:controllerModule|ALUcont[3]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv Line: 23
+    Warning (13049): Converted tri-state buffer "controller:controllerModule|ALUcont[2]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv Line: 23
+    Warning (13049): Converted tri-state buffer "controller:controllerModule|ALUcont[1]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv Line: 23
+    Warning (13049): Converted tri-state buffer "controller:controllerModule|ALUcont[0]" feeding internal logic into a wire File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv Line: 23
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276004): RAM logic "registerFile:registerFileModule|registers" is uninferred due to inappropriate RAM size File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/registerFile.sv Line: 26
+    Info (276004): RAM logic "registerFile:registerFileModule|registers" is uninferred due to inappropriate RAM size File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/registerFile.sv Line: 26
+Warning (13027): Removed fan-outs from the following always-disabled I/O buffers
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[0]" to the node "LED_B_Data_Bus[0]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[1]" to the node "LED_B_Data_Bus[1]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[2]" to the node "LED_B_Data_Bus[2]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[3]" to the node "LED_B_Data_Bus[3]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[4]" to the node "LED_B_Data_Bus[4]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[5]" to the node "LED_B_Data_Bus[5]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[6]" to the node "LED_B_Data_Bus[6]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[7]" to the node "LED_B_Data_Bus[7]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[8]" to the node "LED_B_Data_Bus[8]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
+    Warning (13028): Removed fan-out from the always-disabled I/O buffer "ram_1024x10:ramModule|data_out[9]" to the node "LED_B_Data_Bus[9]" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/ram_1024x10.sv Line: 11
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13047): Converted the fan-out from the tri-state buffer "inputlogic:inputLogicModule|databus[0]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/inputlogic.sv Line: 17
-    Warning (13047): Converted the fan-out from the tri-state buffer "inputlogic:inputLogicModule|databus[1]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/inputlogic.sv Line: 17
-    Warning (13047): Converted the fan-out from the tri-state buffer "inputlogic:inputLogicModule|databus[2]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/inputlogic.sv Line: 17
-    Warning (13047): Converted the fan-out from the tri-state buffer "inputlogic:inputLogicModule|databus[3]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/inputlogic.sv Line: 17
-    Warning (13047): Converted the fan-out from the tri-state buffer "inputlogic:inputLogicModule|databus[4]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/inputlogic.sv Line: 17
-    Warning (13047): Converted the fan-out from the tri-state buffer "inputlogic:inputLogicModule|databus[5]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/inputlogic.sv Line: 17
-    Warning (13047): Converted the fan-out from the tri-state buffer "controller:controllerModule|IMM[6]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/controller.sv Line: 14
-    Warning (13047): Converted the fan-out from the tri-state buffer "controller:controllerModule|IMM[7]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/controller.sv Line: 14
-    Warning (13047): Converted the fan-out from the tri-state buffer "controller:controllerModule|IMM[8]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/controller.sv Line: 14
-    Warning (13047): Converted the fan-out from the tri-state buffer "controller:controllerModule|IMM[9]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/controller.sv Line: 14
+    Warning (13047): Converted the fan-out from the tri-state buffer "inputlogic:inputLogicModule|databus[0]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/inputlogic.sv Line: 17
+    Warning (13047): Converted the fan-out from the tri-state buffer "inputlogic:inputLogicModule|databus[1]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/inputlogic.sv Line: 17
+    Warning (13047): Converted the fan-out from the tri-state buffer "inputlogic:inputLogicModule|databus[2]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/inputlogic.sv Line: 17
+    Warning (13047): Converted the fan-out from the tri-state buffer "inputlogic:inputLogicModule|databus[3]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/inputlogic.sv Line: 17
+    Warning (13047): Converted the fan-out from the tri-state buffer "inputlogic:inputLogicModule|databus[4]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/inputlogic.sv Line: 17
+    Warning (13047): Converted the fan-out from the tri-state buffer "inputlogic:inputLogicModule|databus[5]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/inputlogic.sv Line: 17
+    Warning (13047): Converted the fan-out from the tri-state buffer "controller:controllerModule|IMM[6]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv Line: 14
+    Warning (13047): Converted the fan-out from the tri-state buffer "controller:controllerModule|IMM[7]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv Line: 14
+    Warning (13047): Converted the fan-out from the tri-state buffer "controller:controllerModule|IMM[8]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv Line: 14
+    Warning (13047): Converted the fan-out from the tri-state buffer "controller:controllerModule|IMM[9]" to the node "ALU:multistageALU|Result_from_ALU" into an OR gate File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/controller.sv Line: 14
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "DHEX2[1]" is stuck at GND File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 21
-    Warning (13410): Pin "THEX_Current_Timestep[1]" is stuck at GND File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 22
+    Warning (13410): Pin "DHEX2[1]" is stuck at GND File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 21
+    Warning (13410): Pin "THEX_Current_Timestep[1]" is stuck at GND File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/SV Module Files/Bitblaster_10Bit_Processor.sv Line: 22
 Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/Bitblaster_10Bit_Processor/output_files/Bitblaster_10Bit_Processor.map.smsg
+Info (144001): Generated suppressed messages file D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/Bitblaster_10Bit_Processor/output_files/Bitblaster_10Bit_Processor.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 509 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 510 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 39 output pins
-    Info (21061): Implemented 457 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 40 warnings
-    Info: Peak virtual memory: 4820 megabytes
-    Info: Processing ended: Wed Nov 29 16:49:01 2023
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:10
+    Info (21061): Implemented 458 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
+    Info: Peak virtual memory: 4827 megabytes
+    Info: Processing ended: Sat Dec  2 19:58:57 2023
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_Processor/Bitblaster_10Bit_Processor/output_files/Bitblaster_10Bit_Processor.map.smsg.
+The suppressed messages can be found in D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/Bitblaster_10Bit_Processor/output_files/Bitblaster_10Bit_Processor.map.smsg.
 
 
