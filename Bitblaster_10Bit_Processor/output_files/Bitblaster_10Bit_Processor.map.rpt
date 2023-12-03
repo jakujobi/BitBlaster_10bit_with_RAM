@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Bitblaster_10Bit_Processor
-Sun Dec  3 00:54:03 2023
+Sun Dec  3 13:33:11 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -54,13 +54,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Dec  3 00:54:03 2023          ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec  3 13:33:11 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; Bitblaster_10Bit_Processor                     ;
 ; Top-level Entity Name              ; Bitblaster_10Bit_Processor                     ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 509                                            ;
-;     Total combinational functions  ; 419                                            ;
+; Total logic elements               ; 514                                            ;
+;     Total combinational functions  ; 424                                            ;
 ;     Dedicated logic registers      ; 147                                            ;
 ; Total registers                    ; 147                                            ;
 ; Total pins                         ; 52                                             ;
@@ -167,12 +167,13 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 10          ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 10          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-10        ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processors 3-10        ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -209,16 +210,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------------------------------------------------+
 ; Resource                                    ; Usage                                                 ;
 +---------------------------------------------+-------------------------------------------------------+
-; Estimated Total logic elements              ; 509                                                   ;
+; Estimated Total logic elements              ; 514                                                   ;
 ;                                             ;                                                       ;
-; Total combinational functions               ; 419                                                   ;
+; Total combinational functions               ; 424                                                   ;
 ; Logic element usage by number of LUT inputs ;                                                       ;
-;     -- 4 input functions                    ; 291                                                   ;
-;     -- 3 input functions                    ; 76                                                    ;
-;     -- <=2 input functions                  ; 52                                                    ;
+;     -- 4 input functions                    ; 295                                                   ;
+;     -- 3 input functions                    ; 74                                                    ;
+;     -- <=2 input functions                  ; 55                                                    ;
 ;                                             ;                                                       ;
 ; Logic elements by mode                      ;                                                       ;
-;     -- normal mode                          ; 379                                                   ;
+;     -- normal mode                          ; 384                                                   ;
 ;     -- arithmetic mode                      ; 40                                                    ;
 ;                                             ;                                                       ;
 ; Total registers                             ; 147                                                   ;
@@ -232,7 +233,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                       ;
 ; Maximum fan-out node                        ; inputlogic:inputLogicModule|debouncer:clk_debouncer|A ;
 ; Maximum fan-out                             ; 125                                                   ;
-; Total fan-out                               ; 2239                                                  ;
+; Total fan-out                               ; 2255                                                  ;
 ; Average fan-out                             ; 3.29                                                  ;
 +---------------------------------------------+-------------------------------------------------------+
 
@@ -242,10 +243,10 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                            ; Entity Name                ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
-; |Bitblaster_10Bit_Processor               ; 419 (0)             ; 147 (0)                   ; 10240       ; 0          ; 0            ; 0       ; 0         ; 52   ; 0            ; 0          ; |Bitblaster_10Bit_Processor                                                                                    ; Bitblaster_10Bit_Processor ; work         ;
-;    |ALU:multistageALU|                    ; 206 (206)           ; 20 (20)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|ALU:multistageALU                                                                  ; ALU                        ; work         ;
+; |Bitblaster_10Bit_Processor               ; 424 (0)             ; 147 (0)                   ; 10240       ; 0          ; 0            ; 0       ; 0         ; 52   ; 0            ; 0          ; |Bitblaster_10Bit_Processor                                                                                    ; Bitblaster_10Bit_Processor ; work         ;
+;    |ALU:multistageALU|                    ; 209 (209)           ; 20 (20)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|ALU:multistageALU                                                                  ; ALU                        ; work         ;
 ;    |controller:controllerModule|          ; 49 (49)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|controller:controllerModule                                                        ; controller                 ; work         ;
-;    |inputlogic:inputLogicModule|          ; 71 (27)             ; 34 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|inputlogic:inputLogicModule                                                        ; inputlogic                 ; work         ;
+;    |inputlogic:inputLogicModule|          ; 73 (29)             ; 34 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|inputlogic:inputLogicModule                                                        ; inputlogic                 ; work         ;
 ;       |debouncer:clk_debouncer|           ; 22 (22)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|inputlogic:inputLogicModule|debouncer:clk_debouncer                                ; debouncer                  ; work         ;
 ;       |debouncer:peek_debouncer|          ; 22 (22)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|inputlogic:inputLogicModule|debouncer:peek_debouncer                               ; debouncer                  ; work         ;
 ;    |outputlogic:outputLogicModule|        ; 30 (30)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Bitblaster_10Bit_Processor|outputlogic:outputLogicModule                                                      ; outputlogic                ; work         ;
@@ -322,17 +323,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------+------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Bitblaster_10Bit_Processor|controller:controllerModule|Ain     ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; No         ; |Bitblaster_10Bit_Processor|controller:controllerModule|Rin[1]  ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |Bitblaster_10Bit_Processor|controller:controllerModule|Rout[1] ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |Bitblaster_10Bit_Processor|ALU:multistageALU|Add0              ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |Bitblaster_10Bit_Processor|ALU:multistageALU|Add0              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Bitblaster_10Bit_Processor|controller:controllerModule|EN_AddressRegRead ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; No         ; |Bitblaster_10Bit_Processor|controller:controllerModule|Rin[1]            ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |Bitblaster_10Bit_Processor|controller:controllerModule|Rout[1]           ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |Bitblaster_10Bit_Processor|ALU:multistageALU|Add0                        ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |Bitblaster_10Bit_Processor|ALU:multistageALU|Add0                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------+
@@ -502,20 +503,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 32                          ;
 ;     plain             ; 25                          ;
 ; cycloneiii_io_obuf    ; 10                          ;
-; cycloneiii_lcell_comb ; 425                         ;
+; cycloneiii_lcell_comb ; 430                         ;
 ;     arith             ; 40                          ;
 ;         2 data inputs ; 30                          ;
 ;         3 data inputs ; 10                          ;
-;     normal            ; 385                         ;
+;     normal            ; 390                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 7                           ;
-;         2 data inputs ; 20                          ;
-;         3 data inputs ; 66                          ;
-;         4 data inputs ; 291                         ;
+;         2 data inputs ; 23                          ;
+;         3 data inputs ; 64                          ;
+;         4 data inputs ; 295                         ;
 ; cycloneiii_ram_block  ; 10                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 14.00                       ;
-; Average LUT depth     ; 8.81                        ;
+; Max LUT depth         ; 15.00                       ;
+; Average LUT depth     ; 9.10                        ;
 +-----------------------+-----------------------------+
 
 
@@ -524,7 +525,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -534,7 +535,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Sun Dec  3 00:53:48 2023
+    Info: Processing started: Sun Dec  3 13:32:57 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Bitblaster_10Bit_Processor -c Bitblaster_10Bit_Processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
@@ -643,16 +644,16 @@ Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/BitBlaster_10bit_with_RAM/Bitblaster_10Bit_Processor/output_files/Bitblaster_10Bit_Processor.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 582 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 587 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 39 output pins
-    Info (21061): Implemented 520 logic cells
+    Info (21061): Implemented 525 logic cells
     Info (21064): Implemented 10 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
-    Info: Peak virtual memory: 4836 megabytes
-    Info: Processing ended: Sun Dec  3 00:54:03 2023
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Peak virtual memory: 4844 megabytes
+    Info: Processing ended: Sun Dec  3 13:33:11 2023
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:08
 
 
 +------------------------------------------+

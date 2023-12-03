@@ -226,7 +226,7 @@ always_comb begin
             //Blah blahhhh...do nothing
         end
 
-    //! T3: 3rd Timestep
+    //! T3: 4th Timestep
     end else if ( T == 2'b11 ) begin
         // Initialize all outputs to default values
         IMM = 10'bzzzzzzzzzz;   // Default value for IMM
@@ -246,7 +246,7 @@ always_comb begin
         RAM_read_from_RAM = 1'b0; // Default value for RAM_read_from_RAM
         RAM_write_to_RAM = 1'b0; // Default value for RAM_write_to_RAM
 
-        Clr = 1'b0;             // Default value for Clr
+        Clr = 1;             // Default value for Clr
 
         if (INST[9:8] == 2'b00 && INST[3:0] != 4'b1100 && INST[3:0] != 4'b1101) begin
             //Store the value from the bus into the G register and into the Rx register

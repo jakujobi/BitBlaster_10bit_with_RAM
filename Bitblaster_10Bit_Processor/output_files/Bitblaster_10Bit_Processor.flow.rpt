@@ -1,5 +1,5 @@
 Flow report for Bitblaster_10Bit_Processor
-Sun Dec  3 00:54:33 2023
+Sun Dec  3 13:33:42 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Sun Dec  3 00:54:33 2023          ;
+; Flow Status                        ; Successful - Sun Dec  3 13:33:42 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; Bitblaster_10Bit_Processor                     ;
 ; Top-level Entity Name              ; Bitblaster_10Bit_Processor                     ;
 ; Family                             ; MAX 10                                         ;
 ; Device                             ; 10M50DAF484C7G                                 ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 455 / 49,760 ( < 1 % )                         ;
-;     Total combinational functions  ; 420 / 49,760 ( < 1 % )                         ;
+; Total logic elements               ; 461 / 49,760 ( < 1 % )                         ;
+;     Total combinational functions  ; 425 / 49,760 ( < 1 % )                         ;
 ;     Dedicated logic registers      ; 147 / 49,760 ( < 1 % )                         ;
 ; Total registers                    ; 147                                            ;
 ; Total pins                         ; 52 / 360 ( 14 % )                              ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+----------------------------+
 ; Option            ; Setting                    ;
 +-------------------+----------------------------+
-; Start date & time ; 12/03/2023 00:53:49        ;
+; Start date & time ; 12/03/2023 13:32:57        ;
 ; Main task         ; Compilation                ;
 ; Revision Name     ; Bitblaster_10Bit_Processor ;
 +-------------------+----------------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589206.170158642904724         ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 10995770589203.170163197716152         ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -102,12 +102,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 4836 MB             ; 00:00:07                           ;
-; Fitter               ; 00:00:13     ; 1.2                     ; 6005 MB             ; 00:00:08                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 4723 MB             ; 00:00:00                           ;
-; Timing Analyzer      ; 00:00:05     ; 1.3                     ; 4893 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4675 MB             ; 00:00:00                           ;
-; Total                ; 00:00:38     ; --                      ; --                  ; 00:00:16                           ;
+; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 4844 MB             ; 00:00:08                           ;
+; Fitter               ; 00:00:19     ; 1.2                     ; 6009 MB             ; 00:00:11                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4722 MB             ; 00:00:00                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.3                     ; 4902 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4666 MB             ; 00:00:00                           ;
+; Total                ; 00:00:37     ; --                      ; --                  ; 00:00:20                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
