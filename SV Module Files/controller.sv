@@ -23,11 +23,11 @@ module controller(
     output logic [3:0] ALUcont, //Signal to control which arithmetic or logic operation the ALU should perform
     output logic Ext,           //Enable signal to drive the shared data bus from the external “data” signal
     output logic IRin,          //Enable signal to save data to the instruction register
-    output logic Clr            //Clear signal for the timestep counter
+    output logic Clr,            //Clear signal for the timestep counter
 
     //RAM signals
     output logic RAM_read_from_RAM,  // Enable signal to read data from RAM
-    output logic RAM_write_to_RAM; // Enable signal to write data to RAM
+    output logic RAM_write_to_RAM, // Enable signal to write data to RAM
     output logic EN_AddressRegRead //Enable signal to let the address read from the bus
 );
 

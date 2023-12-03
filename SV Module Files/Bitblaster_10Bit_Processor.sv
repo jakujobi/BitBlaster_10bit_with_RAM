@@ -78,7 +78,7 @@ logic Gin_Gin;                                  //Enable signal to save data to 
 logic Gout_Gout;                                //Enable signal to save data from the intermediate ALU output “G”
 logic [3:0] ALUcont_FN;                         //Signal to control which arithmetic or logic operation the ALU should perform
 
-logiv EN_RAM_to_BUS;                            //Enable signal to read data from RAM
+logic EN_RAM_to_BUS;                            //Enable signal to read data from RAM
 logic EN_BUS_to_RAM;                            //Enable signal to write data to RAM
 
 logic EN_Address_Register_Read_from_BUS;        //Enable signal for the address register to read from the BUS
@@ -109,7 +109,7 @@ controller controllerModule(
 
     //RAM signals
     .RAM_read_from_RAM(EN_RAM_to_BUS),  // Enable signal to read data from RAM
-    .RAM_write_to_RAM(EN_BUS_to_RAM); // Enable signal to write data to RAM
+    .RAM_write_to_RAM(EN_BUS_to_RAM), // Enable signal to write data to RAM
     .EN_AddressRegRead (EN_Address_Register_Read_from_BUS)  // Enable signal for the address register to read from the BUS
 );
 
@@ -136,10 +136,10 @@ ram_1024x10 ramModule (
 .EN_write_to_RAM (EN_BUS_to_RAM), // Write enable
 .EN_read_from_RAM (EN_RAM_to_BUS), // Read enable
 
-.din (Shared_Data_Bus), // Input data
-.dout (Shared_Data_Bus) // Output data
+.data_in (Shared_Data_Bus), // Input data
+.data_out (Shared_Data_Bus), // Output data
 
-.address (Address_from_Register), // Address
+.address (Shared_Data_Bus), // Address
 .EN_AddressRegRead (EN_Address_Register_Read_from_BUS)  // Enable signal for the address register to read from the BUS
 ); 
 
