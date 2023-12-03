@@ -28,6 +28,7 @@ module controller(
     //RAM signals
     output logic RAM_read_from_RAM,  // Enable signal to read data from RAM
     output logic RAM_write_to_RAM; // Enable signal to write data to RAM
+    output logic EN_AddressRegRead //Enable signal to let the address read from the bus
 );
 
 parameter 
@@ -46,8 +47,8 @@ parameter
     ADDI = 4'b1100,             //addi Rx, 6’bIIIIII; Add the value in Rx and the 6’bIIIIII and store the result inRx:  Rx←[Rx] + [6’bIIIIII]
     SUBI = 4'b1101;             //subi Rx, 6’bIIIIII; Subtract the value in Rx and the 6’bIIIIII and store the result inRx:  Rx←[Rx] − [6’bIIIIII]
 
-logic [1:0] Rx; //Rx register
-logic [1:0] Ry; //Ry register
+// logic [1:0] Rx; //Rx register
+// logic [1:0] Ry; //Ry register
 
 always_comb begin
     // Initialize all outputs to default values
@@ -64,6 +65,7 @@ always_comb begin
     IRin = 1'b0;            // Default value for IRin
     Clr = 1'b0;             // Default value for Clr
 
+    EN_AddressRegRead = 1'b0; // Default value for EN_AddressRegRead
     RAM_read_from_RAM = 1'b0; // Default value for RAM_read_from_RAM
     RAM_write_to_RAM = 1'b0; // Default value for RAM_write_to_RAM
 
@@ -83,6 +85,7 @@ always_comb begin
         IRin = 1'b0;            // Default value for IRin
         Clr = 1'b0;             // Default value for Clr
 
+        EN_AddressRegRead = 1'b0; // Default value for EN_AddressRegRead
         RAM_read_from_RAM = 1'b0; // Default value for RAM_read_from_RAM
         RAM_write_to_RAM = 1'b0; // Default value for RAM_write_to_RAM
 
@@ -105,6 +108,7 @@ always_comb begin
         IRin = 1'b0;            // Default value for IRin
         Clr = 1'b0;             // Default value for Clr
     
+        EN_AddressRegRead = 1'b0; // Default value for EN_AddressRegRead
         RAM_read_from_RAM = 1'b0; // Default value for RAM_read_from_RAM
         RAM_write_to_RAM = 1'b0; // Default value for RAM_write_to_RAM
 
@@ -121,7 +125,7 @@ always_comb begin
         
         //COPY operation
         else if (INST[9:8] == 2'b00 && INST[3:0] == 4'b0001) begin //4'b0001 equals to COPY
-            Rout = INST[5:4];   //Prep the Rx register to write
+            Rout = INST[5:4];   //Prep the Ry register to write
             ENR = 1;            //Let the register file write to the bus
             Rin = INST[7:6];    //Load the data into the Rx register
             ENW = 1;            //Let the register file read
@@ -168,6 +172,7 @@ always_comb begin
         IRin = 1'b0;            // Default value for IRin
         Clr = 1'b0;             // Default value for Clr
     
+        EN_AddressRegRead = 1'b0; // Default value for EN_AddressRegRead
         RAM_read_from_RAM = 1'b0; // Default value for RAM_read_from_RAM
         RAM_write_to_RAM = 1'b0; // Default value for RAM_write_to_RAM
 
@@ -210,6 +215,7 @@ always_comb begin
         Ext = 1'b0;             // Default value for Ext
         IRin = 1'b0;            // Default value for IRin
 
+        EN_AddressRegRead = 1'b0; // Default value for EN_AddressRegRead
         RAM_read_from_RAM = 1'b0; // Default value for RAM_read_from_RAM
         RAM_write_to_RAM = 1'b0; // Default value for RAM_write_to_RAM
 
