@@ -81,8 +81,8 @@ always_comb begin
         Gin = 1'b0;             // Default value for Gin
         Gout = 1'b0;            // Default value for Gout
         ALUcont = 4'bzzzz;      // Default value for ALUcont
-        Ext = 1'b0;             // Default value for Ext
-        IRin = 1'b0;            // Default value for IRin
+        //Ext = 1'b0;             // Default value for Ext
+        //IRin = 1'b0;            // Default value for IRin
         Clr = 1'b0;             // Default value for Clr
 
         EN_AddressRegRead = 1'b0; // Default value for EN_AddressRegRead
@@ -134,19 +134,19 @@ always_comb begin
 
         //!New additions______________________________
         //LDR operation: Load the data stored in RAM at the 10-bit address stored in Ry to Rx
-        if (INST[9:8] == 2'b00 && INST[3:0] == 1100) begin //4'1100 equals to LDR
+        else if (INST[9:8] == 2'b00 && INST[3:0] == 1100) begin //4'1100 equals to LDR
             Ext = 0;            //Don't allow external data input
             Rout = INST[5:4];    //Prep the Ry register to write
             ENR = 1;            //Let the register file write to bus
-            EN_AddressRegRead = 1 //Let AddressReg read
+            EN_AddressRegRead = 1; //Let AddressReg read
         end
 
         //STR operation: 
-        if (INST[9:8] == 2'b00 && INST[3:0] == 1101) begin //4'1101 equals to STR
+        else if (INST[9:8] == 2'b00 && INST[3:0] == 1101) begin //4'1101 equals to STR
             Ext = 0;            //Don't allow external data input
             Rout = INST[5:4];    //Prep the Ry register to write
             ENR = 1;            //Let the register file write to bus
-            EN_AddressRegRead = 1 //Let AddressReg read
+            EN_AddressRegRead = 1; //Let AddressReg read
         end
 
         //Other ALU operations
@@ -166,6 +166,7 @@ always_comb begin
         ENW = 1'b0;             // Default value for ENW
         ENR = 1'b0;             // Default value for ENR
         Ain = 1'b0;             // Default value for Ain
+        Gin = 1'b0;             // Default value for Gin
         Gout = 1'b0;            // Default value for Gout
         ALUcont = 4'bzzzz;      // Default value for ALUcont
         Ext = 1'b0;             // Default value for Ext
@@ -176,13 +177,12 @@ always_comb begin
         RAM_read_from_RAM = 1'b0; // Default value for RAM_read_from_RAM
         RAM_write_to_RAM = 1'b0; // Default value for RAM_write_to_RAM
 
-        Gin = 1;                //Let the G register save the value from the bus
-
         //Normal ALU operations
         if (INST[9:8] == 2'b00) begin
             Rout = INST [5:4];  //Prep the Ry register to write
             ENR = 1;            //Let the register file write to the bus
             ALUcont = INST[3:0];//Get the ALU operation from the instruction
+            Gin = 1;                //Let the G register save the value from the bus
 
         //ADDI operation
         end else if (INST[9:8] == 2'b10) begin 
@@ -190,6 +190,7 @@ always_comb begin
             IMM[5:0] = INST[5:0];//Get the immediate value from the instruction
             IMM[9:6] = 4'b0000;  //Set the other bit to 0
             ALUcont = 4'b0010;   //Get the ALU operation from the instruction
+            Gin = 1;                //Let the G register save the value from the bus
 
         //SUBI operation
         end else if (INST[9:8] == 11) begin
@@ -197,7 +198,26 @@ always_comb begin
             IMM[5:0] = INST[5:0];//Get the immediate value from the instruction
             IMM[10:6] = 4'b0000; //Set the other bit to 0
             ALUcont = 4'b0011;   //Get the ALU operation from the instruction
-        
+            Gin = 1;                //Let the G register save the value from the bus
+
+        //!New additions______________________________
+        //LDR operation: Load the data stored in RAM at the 10-bit address stored in Ry to Rx
+        end else if (INST[9:8] == 2'b00 && INST[3:0] == 1100) begin //4'1100 equals to LDR
+            EN_AddressRegRead = 0; //Stop SD register from reading
+            RAM_read_from_RAM = 1;  //Let RAM read from bus
+
+            ENR = 0;               //Don't let the register file write to the bus
+            Rin = INST[7:6];       //Prep Rx register to save the value from the bus
+            ENW = 1;               //Let the register file to read the value from the bus
+
+        //STR operation: 
+        end else if (INST[9:8] == 2'b00 && INST[3:0] == 1101) begin //4'1101 equals to STR
+            EN_AddressRegRead = 0; //Stop SD register from reading
+            RAM_write_to_RAM = 1;  //Let RAM read from bus
+
+            Rout = INST[7:6];    //Prep the Ry register to write
+            ENR = 1;            //Let the register file write to bus
+
         end else begin
             //Blah blahhhh...do nothing
         end
@@ -219,11 +239,21 @@ always_comb begin
         RAM_read_from_RAM = 1'b0; // Default value for RAM_read_from_RAM
         RAM_write_to_RAM = 1'b0; // Default value for RAM_write_to_RAM
 
-        //Store the value from the bus into the G register and into the Rx register
-        Gout = 1;              //Let the G register save the value from the bus
-        Rin = INST[7:6];       //Prep Rx register to save the value from the bus
-        ENW = 1;               //Let the register file to read the value from the bus
-        Clr = 1;               //Done with the operation, reset the counter
+        //LDR operation: Load the data stored in RAM at the 10-bit address stored in Ry to Rx
+        if (INST[9:8] == 2'b00 && INST[3:0] == 1100) begin //4'1100 equals to LDR
+            Clr = 1;               //Done with the operation, reset the counter
+        //STR operation:
+        end else if (INST[9:8] == 2'b00 && INST[3:0] == 1101) begin //4'1101 equals to STR
+            Clr = 1;               //Done with the operation, reset the counter
+
+        end else begin
+            //Store the value from the bus into the G register and into the Rx register
+            Gout = 1;              //Let the G register save the value from the bus
+            Rin = INST[7:6];       //Prep Rx register to save the value from the bus
+            ENW = 1;               //Let the register file to read the value from the bus
+            Clr = 1;               //Done with the operation, reset the counter
+        end
+        
     end else begin
         //Do nothing
     end
